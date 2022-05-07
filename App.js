@@ -65,6 +65,11 @@ const App = () => {
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.modal}>
           <View style={styles.inner}>
+            <Text
+              onPress={() => isModalVisible(false)}
+              style={{alignSelf: 'flex-end'}}>
+              Close
+            </Text>
             <Text>Input Count</Text>
             <TextInput
               style={styles.ti}
