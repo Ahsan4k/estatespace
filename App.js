@@ -84,7 +84,9 @@ const App = () => {
         </View>
       </Modal>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Button title="FInd Entries" onPress={() => isModalVisible(true)} />
+        <View style={{marginTop: height * 0.5}}>
+          <Button title="Find Entries" onPress={() => isModalVisible(true)} />
+        </View>
         {data.map((item, index) => (
           <View style={styles.iterate} key={index}>
             <Text>
