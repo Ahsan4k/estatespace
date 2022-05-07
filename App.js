@@ -67,7 +67,7 @@ const App = () => {
           <View style={styles.inner}>
             <Text
               onPress={() => isModalVisible(false)}
-              style={{alignSelf: 'flex-end'}}>
+              style={{alignSelf: 'flex-end', marginRight: width * 0.04}}>
               Close
             </Text>
             <Text>Input Count</Text>
@@ -126,13 +126,14 @@ const styles = StyleSheet.create({
   ti: {
     backgroundColor: 'white',
     width: width * 0.8,
-    height: height * 0.02,
+    height: height * 0.05,
     borderWidth: scale(1),
+    color: 'black',
   },
   inner: {
     backgroundColor: 'lightgrey',
     width: width * 0.9,
-    height: height * 0.2,
+    height: height * 0.25,
     alignItems: 'center',
     justifyContent: 'center',
   },
