@@ -84,7 +84,9 @@ const App = () => {
               value={page}
               keyboardType="number-pad"
             />
-            <Button title="Submit" onPress={someFunc} />
+            <View style={{marginTop: height * 0.01}}>
+              <Button title="Submit" onPress={someFunc} />
+            </View>
           </View>
         </View>
       </Modal>
