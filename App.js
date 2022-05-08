@@ -30,7 +30,7 @@ const App = () => {
       try {
         isLoading(true);
         const response = await fetch(
-          `https://my.api.mockaroo.com/users.json?page=${count}&count=${page}&key=930279b0`,
+          `https://my.api.mockaroo.com/users.json?page=${page}&count=${count}&key=930279b0`,
           {
             method: 'GET',
             headers: {
@@ -43,11 +43,11 @@ const App = () => {
         console.log('result', result);
         if (response) {
           setData(result.entries);
-          isModalVisible(false);
         }
       } catch (err) {
         Alert.alert(`${err.name}`, `${err.message}`, [{text: 'OK'}]);
       }
+      isModalVisible(false);
       isLoading(false);
     }
   };
