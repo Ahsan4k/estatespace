@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     height: height * 0.25,
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: scale(1),
   },
   load: {
     flex: 1,
