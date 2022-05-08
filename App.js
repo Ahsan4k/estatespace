@@ -89,7 +89,7 @@ const App = () => {
         </View>
       </Modal>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{marginTop: height * 0.5}}>
+        <View style={{marginTop: height * 0.01}}>
           <Button title="Find Entries" onPress={() => isModalVisible(true)} />
         </View>
         {data.map((item, index) => (
