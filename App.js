@@ -74,14 +74,12 @@ const App = () => {
             <TextInput
               style={styles.ti}
               onChangeText={text => setCount(text)}
-              value={count}
               keyboardType="number-pad"
             />
             <Text>Input Page</Text>
             <TextInput
               style={styles.ti}
               onChangeText={text => setPage(text)}
-              value={page}
               keyboardType="number-pad"
             />
             <View style={{marginTop: height * 0.01}}>
