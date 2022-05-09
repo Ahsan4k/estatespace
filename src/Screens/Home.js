@@ -22,17 +22,17 @@ const Home = props => {
   const [loading, isLoading] = React.useState(false);
   const [modalVisible, isModalVisible] = React.useState(false);
   let count = '';
-  let counter = '';
+  let page = '';
 
   const someFunc = async () => {
     if (count === '') {
       Alert.alert('Sorry', 'Please enter a number', [{text: 'OK'}]);
     } else {
-      counter = 1000 / count;
+      page = 1000 / count;
       try {
         isLoading(true);
         const response = await fetch(
-          `https://my.api.mockaroo.com/users.json?page=${counter}&count=${count}&key=930279b0`,
+          `https://my.api.mockaroo.com/users.json?page=${page}&count=${count}&key=930279b0`,
           {
             method: 'GET',
             headers: {
