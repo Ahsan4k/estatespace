@@ -21,18 +21,17 @@ const App = () => {
   const [loading, isLoading] = React.useState(false);
   const [modalVisible, isModalVisible] = React.useState(false);
   let count = '';
-  let page = '';
   let counter = '';
 
   const someFunc = async () => {
-    if (page === '' || count === '') {
+    if (count === '') {
       Alert.alert('Sorry', 'Please enter a number', [{text: 'OK'}]);
     } else {
       counter = 1000 / count;
       try {
         isLoading(true);
         const response = await fetch(
-          `https://my.api.mockaroo.com/users.json?page=${page}&count=${counter}&key=930279b0`,
+          `https://my.api.mockaroo.com/users.json?page=${counter}&count=${count}&key=930279b0`,
           {
             method: 'GET',
             headers: {
@@ -76,12 +75,6 @@ const App = () => {
             <TextInput
               style={styles.ti}
               onChangeText={text => (count = text)}
-              keyboardType="number-pad"
-            />
-            <Text>Input Page</Text>
-            <TextInput
-              style={styles.ti}
-              onChangeText={text => (page = text)}
               keyboardType="number-pad"
             />
             <View style={{marginTop: height * 0.01}}>
