@@ -14,11 +14,7 @@ const StackNavigation = () => {
         component={Home}
         options={{headerShown: false}}
       />
-      <Stack.Screen
-        name="Param"
-        component={Param}
-        options={{headerShown: false}}
-      />
+      <Stack.Screen name="Param" component={Param} />
     </Stack.Navigator>
   );
 };
