@@ -19,18 +19,20 @@ const height = Dimensions.get('window').height;
 const App = () => {
   const [data, setData] = React.useState([]);
   const [loading, isLoading] = React.useState(false);
-  const [count, setCount] = React.useState('');
-  const [page, setPage] = React.useState('');
   const [modalVisible, isModalVisible] = React.useState(false);
+  let count = '';
+  let page = '';
+  let counter = '';
 
   const someFunc = async () => {
     if (page === '' || count === '') {
       Alert.alert('Sorry', 'Please enter a number', [{text: 'OK'}]);
     } else {
+      counter = 1000 / count;
       try {
         isLoading(true);
         const response = await fetch(
-          `https://my.api.mockaroo.com/users.json?page=${page}&count=${count}&key=930279b0`,
+          `https://my.api.mockaroo.com/users.json?page=${page}&count=${counter}&key=930279b0`,
           {
             method: 'GET',
             headers: {
@@ -73,13 +75,13 @@ const App = () => {
             <Text>Input Count</Text>
             <TextInput
               style={styles.ti}
-              onChangeText={text => setCount(text)}
+              onChangeText={text => (count = text)}
               keyboardType="number-pad"
             />
             <Text>Input Page</Text>
             <TextInput
               style={styles.ti}
-              onChangeText={text => setPage(text)}
+              onChangeText={text => (page = text)}
               keyboardType="number-pad"
             />
             <View style={{marginTop: height * 0.01}}>
